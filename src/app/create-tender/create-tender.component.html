@@ -1,0 +1,47 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+<div class="createTender" *ngIf="!isLoading">
+    <div>
+        <h4 class="center">CREATE TENDER</h4>
+    </div>
+    <div class="container">
+        <form (ngSubmit)="onSubmit(tenderForm)" #tenderForm="ngForm">
+            <div class="row">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">title</i>
+                        <input id="tenderTitle" type="text" class="" name="tenderTitle" ngModel>
+                        <label for="tenderTitle">Tender Title</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">account_balance</i>
+                        <input id="industry" type="text" class="" name="industry" ngModel>
+                        <label for="industry">Industry</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">description</i>
+                        <textarea id="description" class="materialize-textarea" name="description" ngModel></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">date_range</i>
+                    <input name="bidO" id="bidO" type="text" class="datepicker wide" ngModel>
+                    <label for="bidO">Bid Open Date</label>
+                </div>
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">date_range</i>
+                    <input name="bidC" id="bidC" type="text" class="datepicker wide" ngModel>
+                    <label for="bidC">Bid Close Date</label>
+                </div>
+                <button style="margin-top: 10px;float: right;" class="btn waves-effect waves-light" type="submit"
+                    name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
